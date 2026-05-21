@@ -9,45 +9,10 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-green">
-  <button id="themeToggleButton" class="theme-toggle-button" aria-label="Open theme panel">
-    ⚙
-  </button>
-
-  <aside id="themePanel" class="theme-panel">
-    <h3>Theme</h3>
-
-    <p class="theme-label">Color</p>
-
-    <div class="theme-buttons">
-      <button class="theme-btn green active" data-theme="theme-green" aria-label="Green theme"></button>
-      <button class="theme-btn blue" data-theme="theme-blue" aria-label="Blue theme"></button>
-      <button class="theme-btn purple" data-theme="theme-purple" aria-label="Purple theme"></button>
-      <button class="theme-btn dark" data-theme="theme-dark" aria-label="Dark theme"></button>
-    </div>
-
-    <div class="theme-row">
-      <span>Glass</span>
-      <button id="glassToggle" class="toggle-switch active" type="button">
-        <span></span>
-      </button>
-    </div>
-
-    <div class="theme-row">
-      <span>Animations</span>
-      <button id="animationToggle" class="toggle-switch active" type="button">
-        <span></span>
-      </button>
-    </div>
-
-    <button id="resetThemeButton" class="reset-theme-button" type="button">
-      Reset to Default
-    </button>
-  </aside>
-
   <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="#" class="logo">
-        <span class="logo-mark">&lt;/&gt;</span>
+    <div class="container nav-bar">
+      <a href="#home" class="logo">
+        <span class="logo-icon">&lt;/&gt;</span>
         <span>Joel Foster</span>
       </a>
 
@@ -61,35 +26,75 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="resume-button" href="https://github.com/jfoster294" target="_blank">
+      <a href="https://github.com/jfoster294" target="_blank" class="download-button">
         GitHub Profile
       </a>
     </div>
   </header>
 
+  <button id="themeGearButton" class="theme-gear-button" type="button">⚙</button>
+
+  <aside id="themePanel" class="theme-panel">
+    <h3>Theme</h3>
+
+    <p>Color</p>
+
+    <div class="theme-colors">
+      <button class="theme-dot green active" data-theme="theme-green" type="button"></button>
+      <button class="theme-dot blue" data-theme="theme-blue" type="button"></button>
+      <button class="theme-dot purple" data-theme="theme-purple" type="button"></button>
+      <button class="theme-dot orange" data-theme="theme-orange" type="button"></button>
+      <button class="theme-dot pink" data-theme="theme-pink" type="button"></button>
+    </div>
+
+    <p>Mode</p>
+
+    <div class="mode-buttons">
+      <button id="lightModeButton" type="button">☀</button>
+      <button id="darkModeButton" class="active" type="button">☾</button>
+    </div>
+
+    <div class="theme-setting-row">
+      <span>Glass</span>
+      <button id="glassToggle" class="switch active" type="button">
+        <span></span>
+      </button>
+    </div>
+
+    <div class="theme-setting-row">
+      <span>Animations</span>
+      <button id="animationToggle" class="switch active" type="button">
+        <span></span>
+      </button>
+    </div>
+
+    <button id="resetThemeButton" class="reset-button" type="button">
+      Reset to Default
+    </button>
+  </aside>
+
   <main>
-    <section id="home" class="hero-section">
-      <div class="animated-orb orb-one"></div>
-      <div class="animated-orb orb-two"></div>
-      <div class="wave-grid"></div>
+    <section id="home" class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-wave"></div>
 
       <div class="container hero-content">
-        <span class="hero-badge">Front-End Developer</span>
+        <p class="hero-badge">Front-End Developer</p>
 
         <h1>
           I build modern, responsive
           <span>web experiences.</span>
         </h1>
 
-        <p class="hero-text">
-          I build practical front-end projects focused on clean interfaces,
-          responsive layouts, APIs, forms, filtering, local storage, cart logic,
-          and real user flows.
+        <p class="hero-description">
+          I build clean, accessible, and practical front-end projects with
+          HTML, CSS, JavaScript, APIs, forms, filtering, local storage,
+          cart logic, and responsive layouts.
         </p>
 
         <div class="hero-actions">
-          <a href="#projects" class="primary-button">View My Work</a>
-          <a href="#contact" class="secondary-button">Contact Me</a>
+          <a href="#projects" class="primary-button">View My Work →</a>
+          <a href="#contact" class="secondary-button">Contact Me ✈</a>
         </div>
       </div>
     </section>
@@ -97,42 +102,42 @@
     <section class="dashboard-section">
       <div class="container dashboard-grid">
         <article id="about" class="glass-card about-card">
-          <div class="card-title-row">
-            <span class="card-icon">👤</span>
+          <div class="card-heading">
+            <span>👤</span>
             <h2>About Me</h2>
           </div>
 
-          <div class="about-content">
-            <div class="profile-circle">
+          <div class="about-layout">
+            <div class="avatar">
               <span>JF</span>
               <div class="status-dot"></div>
             </div>
 
-            <div class="about-text">
+            <div>
               <p>
                 I’m Joel, a front-end developer building portfolio-ready projects
                 through hands-on learning.
               </p>
 
               <p>
-                My focus is simple: build real apps, learn by doing, and turn
-                each project into proof that I can solve practical front-end problems.
+                I focus on clean interfaces, useful features, responsive layouts,
+                and real project workflows that make me job-ready.
               </p>
             </div>
           </div>
 
           <div class="stats-row">
-            <div class="stat-box">
+            <div>
               <strong>4+</strong>
               <span>Live Projects</span>
             </div>
 
-            <div class="stat-box">
-              <strong>7+</strong>
-              <span>Upcoming Builds</span>
+            <div>
+              <strong>15+</strong>
+              <span>Skills Practiced</span>
             </div>
 
-            <div class="stat-box">
+            <div>
               <strong>100%</strong>
               <span>Hands-On</span>
             </div>
@@ -140,24 +145,22 @@
         </article>
 
         <article id="skills" class="glass-card skills-card">
-          <div class="card-title-row">
-            <span class="card-icon">&lt;/&gt;</span>
+          <div class="card-heading">
+            <span>&lt;/&gt;</span>
             <h2>Skills</h2>
           </div>
 
           <div class="skills-grid">
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <span>JavaScript</span>
-            <span>APIs</span>
-            <span>DOM Manipulation</span>
-            <span>Forms</span>
-            <span>Filtering</span>
-            <span>Search</span>
-            <span>Local Storage</span>
-            <span>Cart Logic</span>
-            <span>Responsive Design</span>
-            <span>GitHub Pages</span>
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">APIs</div>
+            <div class="skill-item">Forms</div>
+            <div class="skill-item">Search</div>
+            <div class="skill-item">Filtering</div>
+            <div class="skill-item">Local Storage</div>
+            <div class="skill-item">Cart Logic</div>
+            <div class="skill-item">Responsive Design</div>
           </div>
         </article>
       </div>
@@ -167,23 +170,23 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="section-kicker">Featured Work</p>
+            <p class="section-label">Featured Projects</p>
             <h2>Projects</h2>
           </div>
 
           <a href="https://github.com/jfoster294" target="_blank">View All Projects →</a>
         </div>
 
-        <div class="projects-grid">
+        <div class="featured-grid">
           <article class="project-card">
-            <div class="project-thumb thumb-weather">
-              <span>Weather Dashboard</span>
+            <div class="project-image weather-image">
+              <span>Weather</span>
             </div>
 
             <h3>Weather Dashboard</h3>
 
             <p>
-              Search any city worldwide and view current weather, temperature,
+              Search cities worldwide and view current weather, temperature,
               conditions, location, and forecast.
             </p>
 
@@ -194,14 +197,14 @@
             </div>
 
             <div class="project-links">
-              <a href="https://jfoster294.github.io/weather-dashboard/" target="_blank">Live Demo</a>
+              <a href="https://jfoster294.github.io/weather-dashboard/" target="_blank">Live Demo ↗</a>
               <a href="https://github.com/jfoster294/weather-dashboard" target="_blank">GitHub</a>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-thumb thumb-movie">
-              <span>Movie Search App</span>
+            <div class="project-image movie-image">
+              <span>Movie Search</span>
             </div>
 
             <h3>Movie Search App</h3>
@@ -218,21 +221,21 @@
             </div>
 
             <div class="project-links">
-              <a href="https://jfoster294.github.io/movie-search-app/" target="_blank">Live Demo</a>
+              <a href="https://jfoster294.github.io/movie-search-app/" target="_blank">Live Demo ↗</a>
               <a href="https://github.com/jfoster294/movie-search-app" target="_blank">GitHub</a>
             </div>
           </article>
 
           <article class="project-card">
-            <div class="project-thumb thumb-bug">
-              <span>BugFlow Tracker</span>
+            <div class="project-image bug-image">
+              <span>BugFlow</span>
             </div>
 
             <h3>BugFlow Tracker</h3>
 
             <p>
-              Log issues, assign priority, add time found, track affected
-              location, update status, and save locally.
+              Log issues, assign priority, track affected location, update
+              status, and save everything locally.
             </p>
 
             <div class="project-tags">
@@ -242,114 +245,104 @@
             </div>
 
             <div class="project-links">
-              <a href="https://jfoster294.github.io/bug-flow-tracker/" target="_blank">Live Demo</a>
+              <a href="https://jfoster294.github.io/bug-flow-tracker/" target="_blank">Live Demo ↗</a>
               <a href="https://github.com/jfoster294/bug-flow-tracker" target="_blank">GitHub</a>
             </div>
           </article>
+        </div>
 
-          <article class="project-card">
-            <div class="project-thumb thumb-store">
-              <span>Online Store</span>
+        <div class="more-projects-grid">
+          <article class="small-project-card">
+            <div class="small-icon">🛒</div>
+            <div>
+              <h3>Online Store</h3>
+              <p>Product filtering, cart logic, and local storage.</p>
             </div>
-
-            <h3>Online Store</h3>
-
-            <p>
-              Browse products, select options, add items to a cart, and save
-              the cart locally.
-            </p>
-
-            <div class="project-tags">
-              <span>Cart Logic</span>
-              <span>Filtering</span>
-              <span>Local Storage</span>
-            </div>
-
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/online-store/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/online-store" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">📋</div>
+          <article class="small-project-card">
+            <div class="small-icon">📋</div>
             <div>
               <h3>Kanban Sprint Board</h3>
               <p>Drag and drop task management board.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/kanban-sprint-board/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/kanban-sprint-board" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">📊</div>
+          <article class="small-project-card">
+            <div class="small-icon">📊</div>
             <div>
               <h3>Analytics Dashboard</h3>
-              <p>Business metrics, charts, filters, and summary cards.</p>
+              <p>Business metrics, charts, filters, and cards.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/analytics-dashboard/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/analytics-dashboard" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">📝</div>
+          <article class="small-project-card">
+            <div class="small-icon">📝</div>
             <div>
               <h3>Multi-Step Form</h3>
-              <p>Accessible form wizard with validation and saved progress.</p>
+              <p>Form wizard with validation and saved progress.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/multi-step-form/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/multi-step-form" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">🧾</div>
+          <article class="small-project-card">
+            <div class="small-icon">🧾</div>
             <div>
               <h3>Markdown Notes App</h3>
-              <p>Create, edit, search, tag, and preview markdown notes.</p>
+              <p>Create, edit, search, tag, and preview notes.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/markdown-notes-app/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/markdown-notes-app" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">☁️</div>
+          <article class="small-project-card">
+            <div class="small-icon">☁️</div>
             <div>
               <h3>File Upload Preview App</h3>
-              <p>Drag and drop upload preview with file validation.</p>
+              <p>Drag and drop upload preview with validation.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/file-upload-preview-app/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/file-upload-preview-app" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">🛡️</div>
+          <article class="small-project-card">
+            <div class="small-icon">🛡️</div>
             <div>
               <h3>Cybersecurity Quiz App</h3>
-              <p>Quiz app with scoring, review, and saved best score.</p>
+              <p>Quiz logic, scoring, and saved best score.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/cybersecurity-quiz-app/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/cybersecurity-quiz-app" target="_blank">GitHub</a>
             </div>
           </article>
 
-          <article class="project-card compact-card">
-            <div class="compact-icon">💵</div>
+          <article class="small-project-card">
+            <div class="small-icon">💵</div>
             <div>
               <h3>Invoice Generator</h3>
-              <p>Create invoice items, calculate totals, and print clean invoices.</p>
+              <p>Create invoices, calculate totals, and print.</p>
             </div>
-            <div class="project-links">
+            <div class="small-links">
               <a href="https://jfoster294.github.io/invoice-generator/" target="_blank">Live Demo</a>
               <a href="https://github.com/jfoster294/invoice-generator" target="_blank">GitHub</a>
             </div>
@@ -360,9 +353,9 @@
 
     <section id="contact" class="contact-section">
       <div class="container contact-grid">
-        <article class="glass-card contact-info-card">
-          <div class="card-title-row">
-            <span class="card-icon">✉</span>
+        <article class="glass-card contact-card">
+          <div class="card-heading">
+            <span>✉</span>
             <h2>Contact Me</h2>
           </div>
 
@@ -371,7 +364,7 @@
             and projects where I can keep improving through real-world building.
           </p>
 
-          <div class="contact-info-list">
+          <div class="contact-details">
             <div>
               <strong>Email</strong>
               <span>fosterjoel34@yahoo.com</span>
@@ -381,28 +374,23 @@
               <strong>GitHub</strong>
               <span>github.com/jfoster294</span>
             </div>
-
-            <div>
-              <strong>Focus</strong>
-              <span>Front-End Web Development</span>
-            </div>
           </div>
         </article>
 
-        <article class="glass-card contact-form-card">
-          <h2>Send a Message</h2>
+        <article class="glass-card form-card">
+          <h2>Send Message</h2>
 
           <form id="contactForm" class="contact-form">
             <div class="form-row">
-              <input type="text" id="nameInput" placeholder="Your Name" required />
-              <input type="email" id="emailInput" placeholder="Your Email" required />
+              <input id="nameInput" type="text" placeholder="Your Name" required />
+              <input id="emailInput" type="email" placeholder="Your Email" required />
             </div>
 
-            <input type="text" id="subjectInput" placeholder="Subject" required />
+            <input id="subjectInput" type="text" placeholder="Subject" required />
 
             <textarea id="messageInput" placeholder="Your Message" required></textarea>
 
-            <button type="submit" class="primary-button full-width">Send Message</button>
+            <button class="primary-button full-width" type="submit">Send Message</button>
             <p id="formMessage" class="form-message"></p>
           </form>
         </article>
@@ -410,16 +398,8 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-wrap">
-      <p>© 2026 Joel Foster. All rights reserved.</p>
-
-      <div class="footer-links">
-        <a href="https://github.com/jfoster294" target="_blank">GitHub</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
+  <footer class="footer">
+    <p>© 2026 Joel Foster. Built with HTML, CSS, and JavaScript.</p>
   </footer>
 
   <script src="script.js"></script>
