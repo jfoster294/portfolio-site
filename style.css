@@ -382,6 +382,48 @@ a {
     linear-gradient(135deg, #5c4315, #c99a39);
 }
 
+.thumb-kanban {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #064e3b, #16a34a);
+}
+
+.thumb-analytics {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #172554, #2563eb);
+}
+
+.thumb-form {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #581c87, #a855f7);
+}
+
+.thumb-notes {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #1f2937, #64748b);
+}
+
+.thumb-upload {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #0f766e, #14b8a6);
+}
+
+.thumb-quiz {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #7f1d1d, #ef4444);
+}
+
+.thumb-invoice {
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,0.18), transparent 24%),
+    linear-gradient(135deg, #713f12, #eab308);
+}
+
 .project-card h3 {
   margin-bottom: 12px;
   font-size: 1.25rem;
