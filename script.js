@@ -1,6 +1,10 @@
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
-const themeSelect = document.getElementById("themeSelect");
+
+const themeToggleButton = document.getElementById("themeToggleButton");
+const themePanel = document.getElementById("themePanel");
+const themeButtons = document.querySelectorAll(".theme-btn");
+const resetThemeButton = document.getElementById("resetThemeButton");
 
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("nameInput");
@@ -9,35 +13,51 @@ const subjectInput = document.getElementById("subjectInput");
 const messageInput = document.getElementById("messageInput");
 const formMessage = document.getElementById("formMessage");
 
-const portfolioThemeClasses = [
-  "theme-dark",
-  "theme-blue",
-  "theme-purple",
-  "theme-green",
-  "theme-light"
-];
+const themeClasses = ["theme-green", "theme-blue", "theme-purple", "theme-dark"];
 
-if (menuButton && navLinks) {
+if (menuButton) {
   menuButton.addEventListener("click", function () {
     navLinks.classList.toggle("show");
   });
 }
 
-function applyPortfolioTheme(theme) {
-  document.body.classList.remove(...portfolioThemeClasses);
-  document.body.classList.add(theme);
+function setTheme(themeName) {
+  document.body.classList.remove(...themeClasses);
+  document.body.classList.add(themeName);
+  localStorage.setItem("portfolioTheme", themeName);
 
-  localStorage.setItem("selectedPortfolioTheme", theme);
+  themeButtons.forEach((button) => {
+    button.classList.remove("active");
+
+    if (button.dataset.theme === themeName) {
+      button.classList.add("active");
+    }
+  });
 }
 
-if (themeSelect) {
-  const savedTheme = localStorage.getItem("selectedPortfolioTheme") || "theme-dark";
+const savedTheme = localStorage.getItem("portfolioTheme") || "theme-green";
+setTheme(savedTheme);
 
-  themeSelect.value = savedTheme;
-  applyPortfolioTheme(savedTheme);
+themeButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    const selectedTheme = button.dataset.theme;
+    setTheme(selectedTheme);
+  });
+});
 
-  themeSelect.addEventListener("change", function () {
-    applyPortfolioTheme(themeSelect.value);
+if (resetThemeButton) {
+  resetThemeButton.addEventListener("click", function () {
+    setTheme("theme-green");
+  });
+}
+
+if (themeToggleButton && themePanel) {
+  themeToggleButton.addEventListener("click", function () {
+    if (themePanel.style.display === "none") {
+      themePanel.style.display = "block";
+    } else {
+      themePanel.style.display = "none";
+    }
   });
 }
 
@@ -50,7 +70,7 @@ if (contactForm) {
     const subject = subjectInput.value.trim();
     const message = messageInput.value.trim();
 
-    if (name === "" || email === "" || subject === "" || message === "") {
+    if (!name || !email || !subject || !message) {
       formMessage.textContent = "Please fill out all fields.";
       return;
     }
