@@ -1,12 +1,14 @@
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
 
-const themeToggleButton = document.getElementById("themeToggleButton");
+const themeGearButton = document.getElementById("themeGearButton");
 const themePanel = document.getElementById("themePanel");
-const themeButtons = document.querySelectorAll(".theme-btn");
+const themeDots = document.querySelectorAll(".theme-dot");
 const resetThemeButton = document.getElementById("resetThemeButton");
 const glassToggle = document.getElementById("glassToggle");
 const animationToggle = document.getElementById("animationToggle");
+const lightModeButton = document.getElementById("lightModeButton");
+const darkModeButton = document.getElementById("darkModeButton");
 
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("nameInput");
@@ -15,7 +17,13 @@ const subjectInput = document.getElementById("subjectInput");
 const messageInput = document.getElementById("messageInput");
 const formMessage = document.getElementById("formMessage");
 
-const themeClasses = ["theme-green", "theme-blue", "theme-purple", "theme-dark"];
+const themeClasses = [
+  "theme-green",
+  "theme-blue",
+  "theme-purple",
+  "theme-orange",
+  "theme-pink"
+];
 
 if (menuButton) {
   menuButton.addEventListener("click", function () {
@@ -23,46 +31,32 @@ if (menuButton) {
   });
 }
 
-function setTheme(themeName) {
+function applyTheme(theme) {
   document.body.classList.remove(...themeClasses);
-  document.body.classList.add(themeName);
-  localStorage.setItem("portfolioTheme", themeName);
+  document.body.classList.add(theme);
 
-  themeButtons.forEach(function (button) {
-    button.classList.remove("active");
+  localStorage.setItem("portfolioTheme", theme);
 
-    if (button.dataset.theme === themeName) {
-      button.classList.add("active");
+  themeDots.forEach(function (dot) {
+    dot.classList.remove("active");
+
+    if (dot.dataset.theme === theme) {
+      dot.classList.add("active");
     }
   });
 }
 
 const savedTheme = localStorage.getItem("portfolioTheme") || "theme-green";
-setTheme(savedTheme);
+applyTheme(savedTheme);
 
-themeButtons.forEach(function (button) {
-  button.addEventListener("click", function () {
-    setTheme(button.dataset.theme);
+themeDots.forEach(function (dot) {
+  dot.addEventListener("click", function () {
+    applyTheme(dot.dataset.theme);
   });
 });
 
-if (resetThemeButton) {
-  resetThemeButton.addEventListener("click", function () {
-    setTheme("theme-green");
-
-    document.body.classList.remove("no-glass");
-    document.body.classList.remove("no-animations");
-
-    glassToggle.classList.add("active");
-    animationToggle.classList.add("active");
-
-    localStorage.removeItem("portfolioGlassOff");
-    localStorage.removeItem("portfolioAnimationsOff");
-  });
-}
-
-if (themeToggleButton && themePanel) {
-  themeToggleButton.addEventListener("click", function () {
+if (themeGearButton) {
+  themeGearButton.addEventListener("click", function () {
     themePanel.classList.toggle("hidden-panel");
   });
 }
@@ -102,6 +96,33 @@ if (animationToggle) {
       "portfolioAnimationsOff",
       document.body.classList.contains("no-animations")
     );
+  });
+}
+
+if (resetThemeButton) {
+  resetThemeButton.addEventListener("click", function () {
+    applyTheme("theme-green");
+
+    document.body.classList.remove("no-glass");
+    document.body.classList.remove("no-animations");
+
+    glassToggle.classList.add("active");
+    animationToggle.classList.add("active");
+
+    localStorage.removeItem("portfolioGlassOff");
+    localStorage.removeItem("portfolioAnimationsOff");
+  });
+}
+
+if (lightModeButton && darkModeButton) {
+  lightModeButton.addEventListener("click", function () {
+    lightModeButton.classList.add("active");
+    darkModeButton.classList.remove("active");
+  });
+
+  darkModeButton.addEventListener("click", function () {
+    darkModeButton.classList.add("active");
+    lightModeButton.classList.remove("active");
   });
 }
 
