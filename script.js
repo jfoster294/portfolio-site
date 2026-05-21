@@ -1,37 +1,35 @@
-const contactForm = document.getElementById("contactForm");
-const formStatus = document.getElementById("formStatus");
-const themeToggle = document.getElementById("themeToggle");
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.getElementById("navLinks");
+const themeSelect = document.getElementById("themeSelect");
 
-contactForm.addEventListener("submit", function (event) {
-  event.preventDefault();
+const portfolioThemeClasses = [
+  "theme-dark",
+  "theme-light",
+  "theme-blue",
+  "theme-purple",
+  "theme-green"
+];
 
-  const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
+if (menuButton && navLinks) {
+  menuButton.addEventListener("click", function () {
+    navLinks.classList.toggle("show");
+  });
+}
 
-  if (!name || !email || !message) {
-    formStatus.textContent = "Please fill out all fields.";
-    return;
-  }
+function applyPortfolioTheme(theme) {
+  document.body.classList.remove(...portfolioThemeClasses);
+  document.body.classList.add(theme);
 
-  formStatus.textContent =
-    "Message ready to send. Contact form front-end validation works.";
+  localStorage.setItem("selectedPortfolioTheme", theme);
+}
 
-  contactForm.reset();
-});
+if (themeSelect) {
+  const savedTheme = localStorage.getItem("selectedPortfolioTheme") || "theme-dark";
 
-themeToggle.addEventListener("click", function () {
-  document.body.classList.toggle("dark-mode");
+  themeSelect.value = savedTheme;
+  applyPortfolioTheme(savedTheme);
 
-  if (document.body.classList.contains("dark-mode")) {
-    themeToggle.textContent = "Light Mode";
-  } else {
-    themeToggle.textContent = "Dark Mode";
-  }
-});
-
-menuButton.addEventListener("click", function () {
-  navLinks.classList.toggle("active");
-});
+  themeSelect.addEventListener("change", function () {
+    applyPortfolioTheme(themeSelect.value);
+  });
+}
