@@ -8,399 +8,296 @@
 
   <link rel="stylesheet" href="style.css" />
 </head>
-<body class="theme-green">
-  <header class="site-header">
-    <div class="container nav-bar">
-      <a href="#home" class="logo">
-        <span class="logo-icon">&lt;/&gt;</span>
-        <span>Joel Foster</span>
-      </a>
+<body class="theme-dark">
+  <div class="theme-control">
+    <label for="themeSelect">Theme</label>
+
+    <select id="themeSelect">
+      <option value="theme-dark">Dark Glass</option>
+      <option value="theme-blue">Blue Glass</option>
+      <option value="theme-purple">Purple Glass</option>
+      <option value="theme-green">Green Glass</option>
+      <option value="theme-light">Light Glass</option>
+    </select>
+  </div>
+
+  <header class="hero">
+    <nav class="navbar">
+      <h2 class="logo">Joel Foster</h2>
 
       <button id="menuButton" class="menu-button" type="button">Menu</button>
 
-      <nav id="navLinks" class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <ul id="navLinks" class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
-      <a href="https://github.com/jfoster294" target="_blank" class="download-button">
-        GitHub Profile
-      </a>
-    </div>
+    <section class="hero-content">
+      <p class="eyebrow">Front End Developer</p>
+
+      <h1>Building clean, useful web apps with HTML, CSS, and JavaScript.</h1>
+
+      <p>
+        I build practical front-end projects focused on real user flows,
+        clean interfaces, responsive layouts, APIs, forms, filtering,
+        local storage, and interactive features.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="primary-button">View Projects</a>
+        <a href="#contact" class="secondary-button">Contact Me</a>
+      </div>
+    </section>
   </header>
 
-  <button id="themeGearButton" class="theme-gear-button" type="button">⚙</button>
-
-  <aside id="themePanel" class="theme-panel">
-    <h3>Theme</h3>
-
-    <p>Color</p>
-
-    <div class="theme-colors">
-      <button class="theme-dot green active" data-theme="theme-green" type="button"></button>
-      <button class="theme-dot blue" data-theme="theme-blue" type="button"></button>
-      <button class="theme-dot purple" data-theme="theme-purple" type="button"></button>
-      <button class="theme-dot orange" data-theme="theme-orange" type="button"></button>
-      <button class="theme-dot pink" data-theme="theme-pink" type="button"></button>
-    </div>
-
-    <p>Mode</p>
-
-    <div class="mode-buttons">
-      <button id="lightModeButton" type="button">☀</button>
-      <button id="darkModeButton" class="active" type="button">☾</button>
-    </div>
-
-    <div class="theme-setting-row">
-      <span>Glass</span>
-      <button id="glassToggle" class="switch active" type="button">
-        <span></span>
-      </button>
-    </div>
-
-    <div class="theme-setting-row">
-      <span>Animations</span>
-      <button id="animationToggle" class="switch active" type="button">
-        <span></span>
-      </button>
-    </div>
-
-    <button id="resetThemeButton" class="reset-button" type="button">
-      Reset to Default
-    </button>
-  </aside>
-
   <main>
-    <section id="home" class="hero">
-      <div class="hero-glow"></div>
-      <div class="hero-wave"></div>
+    <section id="about" class="section">
+      <h2>About</h2>
 
-      <div class="container hero-content">
-        <p class="hero-badge">Front-End Developer</p>
+      <p>
+        I am building a front-end developer portfolio through hands-on projects.
+        My focus is learning by building real apps that show practical skills:
+        API fetching, DOM manipulation, forms, filtering, cart logic, local storage,
+        responsive design, and clean user interfaces.
+      </p>
+    </section>
 
-        <h1>
-          I build modern, responsive
-          <span>web experiences.</span>
-        </h1>
+    <section id="skills" class="section">
+      <h2>Skills</h2>
 
-        <p class="hero-description">
-          I build clean, accessible, and practical front-end projects with
-          HTML, CSS, JavaScript, APIs, forms, filtering, local storage,
-          cart logic, and responsive layouts.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#projects" class="primary-button">View My Work →</a>
-          <a href="#contact" class="secondary-button">Contact Me ✈</a>
-        </div>
+      <div class="skills-grid">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>APIs</span>
+        <span>Forms</span>
+        <span>Local Storage</span>
+        <span>Responsive Design</span>
+        <span>DOM Manipulation</span>
+        <span>Filtering</span>
+        <span>Search</span>
+        <span>Cart Logic</span>
+        <span>GitHub Pages</span>
       </div>
     </section>
 
-    <section class="dashboard-section">
-      <div class="container dashboard-grid">
-        <article id="about" class="glass-card about-card">
-          <div class="card-heading">
-            <span>👤</span>
-            <h2>About Me</h2>
-          </div>
+    <section id="projects" class="section">
+      <h2>Projects</h2>
 
-          <div class="about-layout">
-            <div class="avatar">
-              <span>JF</span>
-              <div class="status-dot"></div>
-            </div>
-
-            <div>
-              <p>
-                I’m Joel, a front-end developer building portfolio-ready projects
-                through hands-on learning.
-              </p>
-
-              <p>
-                I focus on clean interfaces, useful features, responsive layouts,
-                and real project workflows that make me job-ready.
-              </p>
-            </div>
-          </div>
-
-          <div class="stats-row">
-            <div>
-              <strong>4+</strong>
-              <span>Live Projects</span>
-            </div>
-
-            <div>
-              <strong>15+</strong>
-              <span>Skills Practiced</span>
-            </div>
-
-            <div>
-              <strong>100%</strong>
-              <span>Hands-On</span>
-            </div>
-          </div>
-        </article>
-
-        <article id="skills" class="glass-card skills-card">
-          <div class="card-heading">
-            <span>&lt;/&gt;</span>
-            <h2>Skills</h2>
-          </div>
-
-          <div class="skills-grid">
-            <div class="skill-item">HTML5</div>
-            <div class="skill-item">CSS3</div>
-            <div class="skill-item">JavaScript</div>
-            <div class="skill-item">APIs</div>
-            <div class="skill-item">Forms</div>
-            <div class="skill-item">Search</div>
-            <div class="skill-item">Filtering</div>
-            <div class="skill-item">Local Storage</div>
-            <div class="skill-item">Cart Logic</div>
-            <div class="skill-item">Responsive Design</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="projects-section">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="section-label">Featured Projects</p>
-            <h2>Projects</h2>
-          </div>
-
-          <a href="https://github.com/jfoster294" target="_blank">View All Projects →</a>
-        </div>
-
-        <div class="featured-grid">
-          <article class="project-card">
-            <div class="project-image weather-image">
-              <span>Weather</span>
-            </div>
-
-            <h3>Weather Dashboard</h3>
-
-            <p>
-              Search cities worldwide and view current weather, temperature,
-              conditions, location, and forecast.
-            </p>
-
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>API</span>
-              <span>Search</span>
-            </div>
-
-            <div class="project-links">
-              <a href="https://jfoster294.github.io/weather-dashboard/" target="_blank">Live Demo ↗</a>
-              <a href="https://github.com/jfoster294/weather-dashboard" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image movie-image">
-              <span>Movie Search</span>
-            </div>
-
-            <h3>Movie Search App</h3>
-
-            <p>
-              Search movies, filter results, view posters, and open detailed
-              movie information using an API.
-            </p>
-
-            <div class="project-tags">
-              <span>JavaScript</span>
-              <span>API</span>
-              <span>Cards</span>
-            </div>
-
-            <div class="project-links">
-              <a href="https://jfoster294.github.io/movie-search-app/" target="_blank">Live Demo ↗</a>
-              <a href="https://github.com/jfoster294/movie-search-app" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-image bug-image">
-              <span>BugFlow</span>
-            </div>
-
-            <h3>BugFlow Tracker</h3>
-
-            <p>
-              Log issues, assign priority, track affected location, update
-              status, and save everything locally.
-            </p>
-
-            <div class="project-tags">
-              <span>Forms</span>
-              <span>Filtering</span>
-              <span>Local Storage</span>
-            </div>
-
-            <div class="project-links">
-              <a href="https://jfoster294.github.io/bug-flow-tracker/" target="_blank">Live Demo ↗</a>
-              <a href="https://github.com/jfoster294/bug-flow-tracker" target="_blank">GitHub</a>
-            </div>
-          </article>
-        </div>
-
-        <div class="more-projects-grid">
-          <article class="small-project-card">
-            <div class="small-icon">🛒</div>
-            <div>
-              <h3>Online Store</h3>
-              <p>Product filtering, cart logic, and local storage.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/online-store/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/online-store" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">📋</div>
-            <div>
-              <h3>Kanban Sprint Board</h3>
-              <p>Drag and drop task management board.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/kanban-sprint-board/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/kanban-sprint-board" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">📊</div>
-            <div>
-              <h3>Analytics Dashboard</h3>
-              <p>Business metrics, charts, filters, and cards.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/analytics-dashboard/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/analytics-dashboard" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">📝</div>
-            <div>
-              <h3>Multi-Step Form</h3>
-              <p>Form wizard with validation and saved progress.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/multi-step-form/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/multi-step-form" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">🧾</div>
-            <div>
-              <h3>Markdown Notes App</h3>
-              <p>Create, edit, search, tag, and preview notes.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/markdown-notes-app/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/markdown-notes-app" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">☁️</div>
-            <div>
-              <h3>File Upload Preview App</h3>
-              <p>Drag and drop upload preview with validation.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/file-upload-preview-app/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/file-upload-preview-app" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">🛡️</div>
-            <div>
-              <h3>Cybersecurity Quiz App</h3>
-              <p>Quiz logic, scoring, and saved best score.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/cybersecurity-quiz-app/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/cybersecurity-quiz-app" target="_blank">GitHub</a>
-            </div>
-          </article>
-
-          <article class="small-project-card">
-            <div class="small-icon">💵</div>
-            <div>
-              <h3>Invoice Generator</h3>
-              <p>Create invoices, calculate totals, and print.</p>
-            </div>
-            <div class="small-links">
-              <a href="https://jfoster294.github.io/invoice-generator/" target="_blank">Live Demo</a>
-              <a href="https://github.com/jfoster294/invoice-generator" target="_blank">GitHub</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <div class="container contact-grid">
-        <article class="glass-card contact-card">
-          <div class="card-heading">
-            <span>✉</span>
-            <h2>Contact Me</h2>
-          </div>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Weather Dashboard</h3>
 
           <p>
-            I’m open to junior front-end developer opportunities, remote work,
-            and projects where I can keep improving through real-world building.
+            An app that lets users search any city worldwide and view current weather,
+            temperature, conditions, location, and forecast.
           </p>
 
-          <div class="contact-details">
-            <div>
-              <strong>Email</strong>
-              <span>fosterjoel34@yahoo.com</span>
-            </div>
+          <p class="project-tech">JavaScript • API Fetching • Dynamic Data Rendering</p>
 
-            <div>
-              <strong>GitHub</strong>
-              <span>github.com/jfoster294</span>
-            </div>
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/weather-dashboard/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/weather-dashboard" target="_blank">GitHub</a>
           </div>
         </article>
 
-        <article class="glass-card form-card">
-          <h2>Send Message</h2>
+        <article class="project-card">
+          <h3>Movie Search App</h3>
 
-          <form id="contactForm" class="contact-form">
-            <div class="form-row">
-              <input id="nameInput" type="text" placeholder="Your Name" required />
-              <input id="emailInput" type="email" placeholder="Your Email" required />
-            </div>
+          <p>
+            A searchable movie app where users can search movies, filter results,
+            view posters, and open detailed movie information.
+          </p>
 
-            <input id="subjectInput" type="text" placeholder="Subject" required />
+          <p class="project-tech">JavaScript • API Fetching • Search Filter • Responsive Card Layout</p>
 
-            <textarea id="messageInput" placeholder="Your Message" required></textarea>
-
-            <button class="primary-button full-width" type="submit">Send Message</button>
-            <p id="formMessage" class="form-message"></p>
-          </form>
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/movie-search-app/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/movie-search-app" target="_blank">GitHub</a>
+          </div>
         </article>
+
+        <article class="project-card">
+          <h3>BugFlow Tracker</h3>
+
+          <p>
+            A front-end bug tracker where users can log issues, assign priority,
+            update status, filter bugs, and save everything locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Forms • Filtering • Local Storage • Responsive Design</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/bug-flow-tracker/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/bug-flow-tracker" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Online Store</h3>
+
+          <p>
+            A front-end online store where users can browse products, select options,
+            add items to a cart, and save the cart locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Cart Logic • Product Filtering • Local Storage • Responsive Design</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/online-store/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/online-store" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Kanban Sprint Board</h3>
+
+          <p>
+            A task board where users can create tasks, organize work by status,
+            move cards between columns, and save the board locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Drag and Drop • Task Management • Local Storage</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/kanban-sprint-board/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/kanban-sprint-board" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Analytics Dashboard</h3>
+
+          <p>
+            A dashboard where users can view business metrics, filter data,
+            review charts, and scan summary cards in a responsive layout.
+          </p>
+
+          <p class="project-tech">JavaScript • Data Visualization • Filtering • Dashboard UI</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/analytics-dashboard/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/analytics-dashboard" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Multi-Step Form</h3>
+
+          <p>
+            An accessible form wizard where users move through multiple steps,
+            validate inputs, review details, and save progress locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Forms • Validation • Accessibility • Local Storage</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/multi-step-form/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/multi-step-form" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Markdown Notes App</h3>
+
+          <p>
+            A notes app where users can create, edit, search, tag, and preview
+            markdown notes while saving everything locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Markdown Preview • Search • Tags • Local Storage</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/markdown-notes-app/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/markdown-notes-app" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>File Upload Preview App</h3>
+
+          <p>
+            A drag and drop upload interface where users can preview files,
+            check file details, remove previews, and validate uploads.
+          </p>
+
+          <p class="project-tech">JavaScript • File Handling • Drag and Drop • Preview UI</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/file-upload-preview-app/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/file-upload-preview-app" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Cybersecurity Quiz App</h3>
+
+          <p>
+            A quiz app where users answer cybersecurity questions, track score,
+            review results, and save their best score locally.
+          </p>
+
+          <p class="project-tech">JavaScript • Quiz Logic • Scoring • Local Storage • Cybersecurity</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/cybersecurity-quiz-app/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/cybersecurity-quiz-app" target="_blank">GitHub</a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <h3>Invoice Generator</h3>
+
+          <p>
+            A business tool where users can add clients, create invoice items,
+            calculate totals, save invoices, and print a clean invoice layout.
+          </p>
+
+          <p class="project-tech">JavaScript • Calculations • Dynamic Forms • Print Layout</p>
+
+          <div class="project-links">
+            <a href="https://jfoster294.github.io/invoice-generator/" target="_blank">Live Demo</a>
+            <a href="https://github.com/jfoster294/invoice-generator" target="_blank">GitHub</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+      <h2>Contact Me</h2>
+
+      <p>
+        I am open to junior front-end developer opportunities, remote work,
+        and projects where I can keep improving through real-world building.
+      </p>
+
+      <form id="contactForm" class="contact-form">
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" placeholder="Your name" required />
+
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" placeholder="your@email.com" required />
+
+        <label for="subjectInput">Subject</label>
+        <input type="text" id="subjectInput" placeholder="Message subject" required />
+
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p id="formMessage" class="form-message"></p>
+      </form>
+
+      <div class="contact-links">
+        <a href="https://github.com/jfoster294" target="_blank">GitHub</a>
+        <a href="mailto:fosterjoel34@yahoo.com">Email Me</a>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <p>© 2026 Joel Foster. Built with HTML, CSS, and JavaScript.</p>
-  </footer>
 
   <script src="script.js"></script>
 </body>
