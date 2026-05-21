@@ -9,6 +9,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="theme-dark">
+  <div class="floating-theme-control">
+    <label for="themeSelect">Theme</label>
+
+    <select id="themeSelect">
+      <option value="theme-dark">Dark</option>
+      <option value="theme-light">Light</option>
+      <option value="theme-blue">Blue</option>
+      <option value="theme-purple">Purple</option>
+      <option value="theme-green">Green</option>
+    </select>
+  </div>
+
   <header class="hero">
     <nav class="navbar">
       <h2 class="logo">Joel Foster</h2>
@@ -24,31 +36,19 @@
     </nav>
 
     <section class="hero-content">
-      <div>
-        <p class="eyebrow">Front End Developer</p>
-        <h1>Building clean, useful web apps with HTML, CSS, and JavaScript.</h1>
-        <p>
-          I build practical front-end projects focused on real user flows,
-          clean interfaces, responsive layouts, APIs, forms, filtering,
-          local storage, and interactive features.
-        </p>
+      <p class="eyebrow">Front End Developer</p>
 
-        <div class="hero-buttons">
-          <a href="#projects" class="primary-button">View Projects</a>
-          <a href="#contact" class="secondary-button">Contact Me</a>
-        </div>
-      </div>
+      <h1>Building clean, useful web apps with HTML, CSS, and JavaScript.</h1>
 
-      <div class="theme-control">
-        <label for="themeSelect">Theme</label>
+      <p>
+        I build practical front end projects focused on real user flows,
+        clean interfaces, responsive layouts, APIs, forms, filtering,
+        local storage, and interactive features.
+      </p>
 
-        <select id="themeSelect">
-          <option value="theme-dark">Dark</option>
-          <option value="theme-light">Light</option>
-          <option value="theme-blue">Blue</option>
-          <option value="theme-purple">Purple</option>
-          <option value="theme-green">Green</option>
-        </select>
+      <div class="hero-buttons">
+        <a href="#projects" class="primary-button">View Projects</a>
+        <a href="#contact" class="secondary-button">Contact Me</a>
       </div>
     </section>
   </header>
@@ -58,7 +58,7 @@
       <h2>About</h2>
 
       <p>
-        I am building a front-end developer portfolio through hands-on projects.
+        I am building a front end developer portfolio through hands-on projects.
         My focus is learning by building real apps that show practical skills:
         API fetching, DOM manipulation, forms, filtering, cart logic, local storage,
         responsive design, and clean user interfaces.
@@ -124,7 +124,7 @@
           <h3>BugFlow Tracker</h3>
 
           <p>
-            A front-end bug tracker where users can log issues, assign priority,
+            A front end bug tracker where users can log issues, assign priority,
             update status, filter bugs, and save everything locally.
           </p>
 
@@ -140,7 +140,7 @@
           <h3>Online Store</h3>
 
           <p>
-            A front-end online store where users can browse products, select options,
+            A front end online store where users can browse products, select options,
             add items to a cart, and save the cart locally.
           </p>
 
@@ -266,13 +266,28 @@
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <h2>Contact</h2>
+    <section id="contact" class="section contact-section">
+      <h2>Contact Me</h2>
 
       <p>
-        I am open to junior front-end developer opportunities, remote work,
+        I am open to junior front end developer opportunities, remote work,
         and projects where I can keep improving through real-world building.
       </p>
+
+      <form id="contactForm" class="contact-form">
+        <label for="nameInput">Name</label>
+        <input type="text" id="nameInput" placeholder="Your name" required />
+
+        <label for="emailInput">Email</label>
+        <input type="email" id="emailInput" placeholder="your@email.com" required />
+
+        <label for="messageInput">Message</label>
+        <textarea id="messageInput" placeholder="Write your message here..." required></textarea>
+
+        <button type="submit">Send Message</button>
+
+        <p id="formMessage" class="form-message"></p>
+      </form>
 
       <div class="contact-links">
         <a href="https://github.com/jfoster294" target="_blank">GitHub</a>
