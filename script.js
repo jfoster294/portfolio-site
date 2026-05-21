@@ -5,6 +5,8 @@ const themeToggleButton = document.getElementById("themeToggleButton");
 const themePanel = document.getElementById("themePanel");
 const themeButtons = document.querySelectorAll(".theme-btn");
 const resetThemeButton = document.getElementById("resetThemeButton");
+const glassToggle = document.getElementById("glassToggle");
+const animationToggle = document.getElementById("animationToggle");
 
 const contactForm = document.getElementById("contactForm");
 const nameInput = document.getElementById("nameInput");
@@ -26,7 +28,7 @@ function setTheme(themeName) {
   document.body.classList.add(themeName);
   localStorage.setItem("portfolioTheme", themeName);
 
-  themeButtons.forEach((button) => {
+  themeButtons.forEach(function (button) {
     button.classList.remove("active");
 
     if (button.dataset.theme === themeName) {
@@ -38,26 +40,68 @@ function setTheme(themeName) {
 const savedTheme = localStorage.getItem("portfolioTheme") || "theme-green";
 setTheme(savedTheme);
 
-themeButtons.forEach((button) => {
+themeButtons.forEach(function (button) {
   button.addEventListener("click", function () {
-    const selectedTheme = button.dataset.theme;
-    setTheme(selectedTheme);
+    setTheme(button.dataset.theme);
   });
 });
 
 if (resetThemeButton) {
   resetThemeButton.addEventListener("click", function () {
     setTheme("theme-green");
+
+    document.body.classList.remove("no-glass");
+    document.body.classList.remove("no-animations");
+
+    glassToggle.classList.add("active");
+    animationToggle.classList.add("active");
+
+    localStorage.removeItem("portfolioGlassOff");
+    localStorage.removeItem("portfolioAnimationsOff");
   });
 }
 
 if (themeToggleButton && themePanel) {
   themeToggleButton.addEventListener("click", function () {
-    if (themePanel.style.display === "none") {
-      themePanel.style.display = "block";
-    } else {
-      themePanel.style.display = "none";
-    }
+    themePanel.classList.toggle("hidden-panel");
+  });
+}
+
+if (glassToggle) {
+  const glassOff = localStorage.getItem("portfolioGlassOff") === "true";
+
+  if (glassOff) {
+    document.body.classList.add("no-glass");
+    glassToggle.classList.remove("active");
+  }
+
+  glassToggle.addEventListener("click", function () {
+    document.body.classList.toggle("no-glass");
+    glassToggle.classList.toggle("active");
+
+    localStorage.setItem(
+      "portfolioGlassOff",
+      document.body.classList.contains("no-glass")
+    );
+  });
+}
+
+if (animationToggle) {
+  const animationsOff = localStorage.getItem("portfolioAnimationsOff") === "true";
+
+  if (animationsOff) {
+    document.body.classList.add("no-animations");
+    animationToggle.classList.remove("active");
+  }
+
+  animationToggle.addEventListener("click", function () {
+    document.body.classList.toggle("no-animations");
+    animationToggle.classList.toggle("active");
+
+    localStorage.setItem(
+      "portfolioAnimationsOff",
+      document.body.classList.contains("no-animations")
+    );
   });
 }
 
