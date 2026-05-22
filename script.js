@@ -8,9 +8,19 @@ const subjectInput = document.getElementById("subjectInput");
 const messageInput = document.getElementById("messageInput");
 const formMessage = document.getElementById("formMessage");
 
-if (menuButton) {
+const profileImage = document.querySelector(".profile-frame img");
+const profileFallback = document.querySelector(".profile-fallback");
+
+if (menuButton && navLinks) {
   menuButton.addEventListener("click", function () {
     navLinks.classList.toggle("show");
+  });
+}
+
+if (profileImage && profileFallback) {
+  profileImage.addEventListener("error", function () {
+    profileImage.style.display = "none";
+    profileFallback.style.display = "grid";
   });
 }
 
